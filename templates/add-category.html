@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Finance Tracker</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+        <link rel="stylesheet" type="text/css" href="/flask_app/static/styles/styles.css/">
+    </head>
+
+    <body>
+
+        <div class="nav-bar">
+            <a href="/"><button class="dropbtn">Home</button></a>
+            <div class="dropdown">
+
+                <button class="dropbtn">Transactions V</button>
+                <div class="dropdown-content">
+                    <a href="/see-all">See & Manage Transactions</a>
+                    <a href="/add-transaction">Add a Transactions</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Categories V</button>
+                <div class="dropdown-content">
+                    <a href="/see-categories">See & Manage Categories</a>
+                    <a href="/add-category">Add a Category</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Advanced Options V</button>
+                <div class="dropdown-content">
+                    <a href="/see-stats">See my Stats</a>
+                    <a href="/see-json">View Transactions as JSON</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="banner">
+
+            <img src="/static/styles/banner.jpg">
+
+            <div class="banner-text-center">
+                <h1 class="home-h1">Welcome to Your Personal Finance Tracker</h1>
+                <h2 class="home-h2">You've come to the right place to take control of your financial future!</h2>
+            </div>
+        </div>
+
+         <form method="post" action="/add-category">
+             <div class="flexbox">
+
+                 <div class="form-field">
+                     <label for="category_name">Category Name:</label>
+                     <input type="text" id="category_name" name="category_name">
+
+                 </div>
+
+                 <div class="form-field">
+                     <label for="category_budget">Category Monthly Budget:</label>
+                     <input type="number" id="category_budget" name="category_budget">
+
+                 </div>
+
+                 <div class="form-field">
+                     <input type="submit" value="Add" class="form-button">
+                 </div>
+             </div>
+         </form>
+
+
+
+    </body>
+
+
+
+</html>
+
+
+
+
+
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Finance Tracker</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+        <link rel="stylesheet" type="text/css" href="/flask_app/static/styles/styles.css/">
+    </head>
+
+    <body>
+
+        <div class="nav-bar">
+            <a href="/"><button class="dropbtn">Home</button></a>
+            <div class="dropdown">
+
+                <button class="dropbtn">Transactions V</button>
+                <div class="dropdown-content">
+                    <a href="/see-all">See & Manage Transactions</a>
+                    <a href="/add-transaction">Add a Transactions</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Categories V</button>
+                <div class="dropdown-content">
+                    <a href="/see-categories">See & Manage Categories</a>
+                    <a href="/add-category">Add a Category</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Advanced Options V</button>
+                <div class="dropdown-content">
+                    <a href="/see-stats">See my Stats</a>
+                    <a href="/see-json">View Transactions as JSON</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="banner">
+
+            <img src="/static/styles/banner.jpg">
+
+            <div class="banner-text-center">
+                <h1 class="home-h1">Welcome to Your Personal Finance Tracker</h1>
+                <h2 class="home-h2">You've come to the right place to take control of your financial future!</h2>
+            </div>
+        </div>
+         <div class="cta" >Select a date range to view all relevant transactions:</div>
+         <form method="post" action="/see-all" class="center-text">
+             <label for="start-date">From:</label>
+             <input type="date" id="start-date" name="start-date">
+
+             <label for="end-date">To:</label>
+             <input type="date" id="end-date" name="end-date">
+
+             <input type="submit" value="Search" class="form-button">
+         </form>
+         <div class="table-container">
+             <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Transaction ID</th>
+                  <th scope="col">Transaction Type</th>
+                  <th scope="col">Transaction Amount ($)</th>
+                  <th scope="col">Transaction Date</th>
+                  <th scope="col">Transaction Category</th>
+                  <th scope="col">Transaction Description</th>
+                  <th scope="col">Actions</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                {% for r in rows %}
+                    {% set item_2 = categories[loop.index-1] %}
+
+                <tr>
+                  <td>{{ r.0 }}</td>
+                  <td>{{ r[1] }}</td>
+                  <td>{{ r.2 }}</td>
+                  <td>{{ r.3 }}</td>
+                  <td>{{ item_2[0] }}</td>
+                  <td>{{ r[5] }}</td>
+                  <td>
+
+                      <div class="container">
+
+                          <div class="interior">
+                              <button type="button" class="form-button" name="Edit" value="Edit" onclick="window.location = '/edit-transaction/{{r[0]}}'" >Edit</button>
+                              <button type="button" class="form-button" name="Delete" value="Edit" onclick="window.location = '/confirmation-dialogue/{{r[0]}}'" >Delete</button>
+                          </div>
+                      </div>
+
+                  </td>
+                </tr>
+                {% endfor %}
+
+              </tbody>
+            </table>
+         </div>
+
+    </body>
+
+
+
+</html>

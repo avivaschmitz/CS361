@@ -1,0 +1,251 @@
+/* Styles for All pages*/
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
+body {
+    margin: 0px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+.banner {
+    position: relative;
+    text-align: center;
+    color: white;
+
+}
+.banner-text-center {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner-text-left {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: white;
+    font-size: 20px;
+    background-color: black;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+
+}
+
+.banner-text-left a {
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.banner-text-left a:active {
+    text-decoration: underline;
+}
+
+.banner-text-left a:hover {
+    color: #4d93c4
+}
+
+h1 {
+    font-size: 47px;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+
+/* Styles for Homepage*/
+.cta {
+    font-size: 32px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn {
+    display:flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 30px;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ccdeeb;
+    height: 200px;
+    align-content: center;
+    justify-content: center;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+.button {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 10px;
+    min-width: 190px;
+}
+
+.button:hover {
+    background-color: #7c91a1;
+}
+
+.button:hover a {
+    color: white;
+}
+
+.button a {
+    color: black;
+
+}
+
+/* Styles for Transactions*/
+
+form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form-button {
+    background-color: #7c91a1;
+    padding: 8px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 100%;
+    min-width: 100px;
+}
+
+.form-button:hover {
+    text-decoration: underline;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.table-container {
+    overflow-y: auto;
+    margin-top: 20px;
+}
+
+th {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 20px;
+    padding-bottom: 10px;
+    border-bottom: solid black 2px;
+    border-right: solid black 2px;
+}
+
+th:last-of-type {
+    border-right-width: 0px;
+}
+
+td {
+    text-align: center;
+    border-bottom: solid black 2px;
+    border-right: solid black 2px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+
+td:last-of-type {
+    border-right-width: 0px;
+}
+
+/* Styles for add new transaction */
+
+
+.flexbox {
+    display: flex;
+    justify-content: center;
+}
+
+.center-text {
+    text-align: center;
+    align-self: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.form-field {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.nav-bar {
+    background-color: black;
+}
+/* Dropdown Button */
+.dropbtn {
+
+    background-color: black;
+    padding: 17px;
+    font-size: 16px;
+    border: none;
+    width: 180px;
+    color: white;
+
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color: white;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropbtn:hover {
+    background-color: #ccdeeb;
+    color: black;
+}
+
+.line {
+    height: 2px;
+    background-color: black;
+    width: 1200px;
+    color: black;
+    font-size: 1px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}

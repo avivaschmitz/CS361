@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Finance Tracker</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+        <link rel="stylesheet" type="text/css" href="/flask_app/static/styles/styles.css/">
+    </head>
+
+    <body>
+
+        <div class="nav-bar">
+            <a href="/"><button class="dropbtn">Home</button></a>
+            <div class="dropdown">
+
+                <button class="dropbtn">Transactions V</button>
+                <div class="dropdown-content">
+                    <a href="/see-all">See & Manage Transactions</a>
+                    <a href="/add-transaction">Add a Transactions</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Categories V</button>
+                <div class="dropdown-content">
+                    <a href="/see-categories">See & Manage Categories</a>
+                    <a href="/add-category">Add a Category</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Advanced Options V</button>
+                <div class="dropdown-content">
+                    <a href="/see-stats">See my Stats</a>
+                    <a href="/see-json">View Transactions as JSON</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="banner">
+
+            <img src="/static/styles/banner.jpg">
+
+            <div class="banner-text-center">
+                <h1 class="home-h1">Welcome to Your Personal Finance Tracker</h1>
+                <h2 class="home-h2">You've come to the right place to take control of your financial future!</h2>
+            </div>
+        </div>
+
+        <h3 class="center-text">Here are some ways you can help support the Personal Finance Tracker project:</h3>
+
+        <div class="btn">
+            <div>
+                <div><h3>Spread the Word</h3></div>
+                <div class="button"><a href="{{ url }}" target="_blank">Tweet about Personal Finance Tracker</a></div>
+                <div class="button"><a href="/submit-comment">Write a Review of Personal Finance Tracker</a></div>
+            </div>
+            <div>
+                <div><h3>Contact Us</h3></div>
+                <div class="button"><a href="/submit-comment">Report a Bug</a></div>
+                <div class="button"><a href="/submit-comment">Request a Feature</a></div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+    </body>
+
+</html>

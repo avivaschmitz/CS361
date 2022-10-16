@@ -1,0 +1,1 @@
+web: gunicorn main:app & python twitter-service.py & wait -n

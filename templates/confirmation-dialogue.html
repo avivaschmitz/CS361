@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Finance Tracker</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
+        <link rel="stylesheet" type="text/css" href="/flask_app/static/styles/styles.css/">
+    </head>
+
+    <body>
+
+        <div class="nav-bar">
+            <a href="/"><button class="dropbtn">Home</button></a>
+            <div class="dropdown">
+
+                <button class="dropbtn">Transactions V</button>
+                <div class="dropdown-content">
+                    <a href="/see-all">See & Manage Transactions</a>
+                    <a href="/add-transaction">Add a Transactions</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Categories V</button>
+                <div class="dropdown-content">
+                    <a href="/see-categories">See & Manage Categories</a>
+                    <a href="/add-category">Add a Category</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Advanced Options V</button>
+                <div class="dropdown-content">
+                    <a href="/see-stats">See my Stats</a>
+                    <a href="/see-json">View Transactions as JSON</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="banner">
+
+            <img src="/static/styles/banner.jpg">
+
+            <div class="banner-text-center">
+                <h1 class="home-h1">Welcome to Your Personal Finance Tracker</h1>
+                <h2 class="home-h2">You've come to the right place to take control of your financial future!</h2>
+            </div>
+        </div>
+
+        <h3 class="center-text">You are about to delete your transaction for ${{ transaction[2] }} that
+        occurred on {{ transaction[3] }} in category {{ category[0] }} with description "{{ transaction[5] }}."</h3>
+        <h3 class="center-text">Is this really what you want to do?</h3>
+        <h3 class="center-text"><strong>This action is irreversible - please proceed with caution.</strong></h3>
+        <div class="form-field">
+            <form class="center-text" method="post" action="/confirmation-dialogue/{{ transaction[0] }}">
+
+                <input type="submit" value="YES - DELETE" class="form-button form-field">
+                <a href="/see-all"><button type="button" class="form-button form-field">NO - CANCEL</button></a>
+            </form>
+        </div>
+
+
+    </body>
+
+
+
+</html>
